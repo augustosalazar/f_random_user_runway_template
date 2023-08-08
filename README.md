@@ -1,16 +1,16 @@
 # f_random_user_runway_template
 
-A new Flutter project.
+Runway Users
 
-## Getting Started
+La aplicación debe poder:
+Obtener contactos de randomUser
+Mostrar una pasarela de contactos con su nombre y foto
+El usuario debe tener la capacidad de agregar un contacto a la lista de favoritos
+El usuario debe tener la capacidad de ver los contactos categorizados como favoritos 
+El usuario debe tener la capacidad de borrar un contacto de la lista de favoritos
+La lista de favoritos debe ser almacenada en un servidor remote y en una base de datos local. La visualización por defecto es la remota, la local solo en caso de no tener acceso a la red.
 
-This project is a starting point for a Flutter application.
+![image](https://github.com/augustosalazar/f_random_user_runway_template/assets/4458129/52fc980a-a874-4886-a5cb-8b0db27d0b85)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
