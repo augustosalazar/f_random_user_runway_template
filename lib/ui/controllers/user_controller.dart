@@ -1,22 +1,35 @@
 import 'package:get/get.dart';
 import 'package:loggy/loggy.dart';
-
-import '../../domain/entities/random_user.dart';
+import '../../domain/entities/app_user.dart';
 import '../../domain/use_case/users.dart';
 
 class UserController extends GetxController {
-  //RxList<RandomUser> _users = <RandomUser>[].obs;
-  //final List<RandomUser> _users = <RandomUser>[].obs;
-  final _user =
-      RandomUser(gender: 'd', name: 'n', email: 'e', city: '', picture: '')
-          .obs();
-
   Users userUseCase = Get.find();
+  final started = false.obs;
 
-  RandomUser get users => _user;
+  final Rx _user = AppUser.empty().obs;
+
+  AppUser get user => _user.value;
+
+  @override
+  void onInit() {
+    loadData();
+    super.onInit();
+  }
+
+  loadData() async {
+    logInfo("Loading initial user and fav users");
+    await getUser();
+  }
 
   Future<void> getUser() async {
-    logInfo("userController -> add user");
-    await userUseCase.addUser();
+    logInfo("userController -> get user");
+    started.value = false;
+    try {
+      _user.value = await userUseCase.getUser();
+      started.value = true;
+    } catch (e) {
+      logError(e);
+    }
   }
 }

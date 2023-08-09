@@ -1,9 +1,8 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'controllers/user_controller.dart';
-import 'pages/user_list_page.dart';
+import 'pages/content_page.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -34,8 +33,8 @@ class Home extends StatelessWidget {
         // fontFamily: GoogleFonts.notoSans().fontFamily,
       ),
       themeMode: ThemeMode.dark,
-      title: 'Flutter Demo',
-      home: UserListPage(),
+      title: 'User runway',
+      home: const ContentPage(),
     );
   }
 }

@@ -1,10 +1,9 @@
+import 'package:f_random_user_runway_template/domain/entities/app_user.dart';
 import 'package:get/get.dart';
-
-import '../entities/random_user.dart';
 import '../repositories/user_repository.dart';
 
 class Users {
   UserRepository repository = Get.find();
 
-  Future<RandomUser> addUser() async => await repository.getUser();
+  Future<AppUser> getUser() async => await repository.getUser();
 }
